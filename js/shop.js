@@ -38,11 +38,37 @@ function displayProducts() {
             </center>
           </div>`
       ).join('')
-        }
-       
+        } 
+
 }; 
 
+var towerClick=0;
+function tower() {
+       towerClick=towerClick+1;
+    console.log(towerClick + ' Cat Tower(s) in cart')
+var towerPrice = 20; 
+towerPrice = towerPrice * towerClick;
+console.log(towerPrice)
+document.getElementById("yourCart").innerHTML = towerClick + ' Cat Tower(s): $' + towerPrice;
+document.getElementById("cartItems").innerHTML = towerClick;
 
+};
+
+var click=0;
+
+var chewClick=0;
+function priceChew() {
+       chewClick=chewClick+1;
+    console.log(chewClick + ' Cat Tower(s) in cart')
+var chewPrice = 10; 
+chewPrice = chewPrice * chewClick;
+document.getElementById("yourCart").innerHTML = chewClick + ' Chew Toy(s): $' + chewPrice;
+document.getElementById("cartItems").innerHTML = chewClick;
+
+
+};
+
+/*
 var click=0;
 
 function priceChew() {
@@ -51,19 +77,19 @@ click=click+1;
 console.log(click);    
 var dogToy = document.getElementById("ten").value;
 var dogCart= (parseInt(dogToy) * click);
-document.getElementById("yourCart").innerHTML = "<p><h2><center> Your cart: $ " + dogCart + "</p></h2></center>";
+document.getElementById("yourCart").innerHTML = "<p><h2><center> Your cart: $ " + dogCart + "</p></h2></center><hr><p> Chew Toy </p>";
 document.getElementById("cartItems").innerHTML = click;
 };
-
+*/
 var click2=0;
-function tower() {
+/*unction tower() {
 
 click2=click2+1;
 console.log(click3);    
 var catToy = document.getElementById("twenty").value;
 var catCart= (parseInt(catToy) * click2);
 document.getElementById("yourCart").innerHTML = "<p><h2><center> Your cart: $ " + catCart + "</p></h2></center>";
-};
+}; */
 
 var click3=0;
 function bed() {
