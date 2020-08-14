@@ -59,7 +59,7 @@ var click=0;
 var chewClick=0;
 function priceChew() {
        chewClick=chewClick+1;
-    console.log(chewClick + ' Cat Tower(s) in cart')
+    console.log(chewClick + ' Chew Toys(s) in cart')
 var chewPrice = 10; 
 chewPrice = chewPrice * chewClick;
 document.getElementById("yourCart").innerHTML = chewClick + ' Chew Toy(s): $' + chewPrice;
@@ -90,7 +90,7 @@ var catToy = document.getElementById("twenty").value;
 var catCart= (parseInt(catToy) * click2);
 document.getElementById("yourCart").innerHTML = "<p><h2><center> Your cart: $ " + catCart + "</p></h2></center>";
 }; */
-
+/*
 var click3=0;
 function bed() {
     
@@ -100,7 +100,7 @@ var catBed = document.getElementById("twenty").value;
 var bedCart= (parseInt(catBed) * click);
 document.getElementById("yourCart").innerHTML = "<p><h2><center> Your cart: $ " + bedCart + "</p></h2></center>";
 };
-
+*/
 
 
 /*var theShop = products[0].image + products[0].name + products[0].price + products[0].details + products[0].button + products[1].name + products[1].price + products[1].image + products[1].details + products[1].button + products[2].name + products[2].price + products[2].image + products[2].details + products[2].button
