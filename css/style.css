@@ -35,9 +35,11 @@ body::-webkit-scrollbar-thumb {
 padding-bottom: 0px;
 padding-top: 0px;
 margin-bottom: 20px;
-width: 100vw;
+width: 100%;
 overflow: hidden;
 }
+
+
 
 .the-nav{
   float: left;
@@ -71,14 +73,26 @@ overflow-y: auto;
 
 .product {    
 height: 80%;
-width: 70vw;
+width: 40vw;
 overflow: hidden;
 margin-top: 20px;
 margin-left: auto;
 margin-right: auto;
 margin-bottom:20px;
 padding: 20px;
+background-color: yellow;
+flex-direction: left;
 }
+
+.cartStyle{
+  background-color: red;
+  flex-direction: left;
+  width: 30vw;
+  padding: 20px;
+  margin-right: 0;
+  margin-top: 0;
+  }
+
 
   #containProducts {
       position: relative;
@@ -139,12 +153,12 @@ textarea {
 
   h1{
       font-weight: bold;
-      font-family: 'Abril Fatface', cursive;
+      font-family: sans-serif;
   }
   
   h2{
     font-weight: bold;
-    font-family: 'Abril Fatface', cursive;
+    font-family: sans-serif;
 }
 
  #summary {
@@ -175,7 +189,7 @@ textarea {
 }
 body {
   font-style: normal;
-  font-family: 'Noto Serif', serif;
+  font-family:  sans-serif;
  background-color: #f2f3f4
  
 }
@@ -239,3 +253,73 @@ ul {
   width: 110vw;
   margin: -10px 0px 0px -180px;
 }
+
+/* the shop */
+
+.cartStyle{
+  background-color: rgba(200, 200, 200, 0.2);
+  float: right;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.cartStyle:hover{
+animation: cartScoot 2s;
+}
+
+ @keyframes cartScoot {
+    from {right: 0px;} 
+    to{right:20px;} 
+   }
+
+.hide {
+  opacity: 0%;
+}
+ 
+  
+.thePhoto{
+  object-fit: contain;
+        margin: 20px;
+        width: 25vw;
+        border: 10px solid white; 
+        box-shadow: 5px 5px 5px grey;
+}
+
+  .card {
+    box-shadow: 1px 1px 10px grey;
+    margin: 20px;
+    flex-direction: left;
+  }
+
+  #display {
+  
+    width: 80vw;
+    margin: auto auto;
+    flex-direction: left;
+
+  }
+
+  #putHere {
+    max-height: 20px;
+    width: 30%;
+    margin: auto auto;
+
+    
+    
+    flex: left;
+  }
+
+  #putHere p{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+  }
+
+  .styleIt{
+   
+    border-radius: 10px;
+    margin: 20px;
+    float: left;
+  }

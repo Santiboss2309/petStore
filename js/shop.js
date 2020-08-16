@@ -1,107 +1,113 @@
-function displayProducts() {
-    console.log('shop is linked');
+var itemsInCart=0;
 
-    var products = [ 
-        {
-            name: "<div class='product'><center><h2>Chew Toy</h2></center> <p>",
-            price: 10,
-            image: '<img src = "./assets/dogtoy.jpg">',
-            details: "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum ad tempora dolorem itaque libero quibusdam officia debitis eius? Voluptas, officia.</p> ",
-            button: '<p><button id="ten" type="button" value = "10" class="btn btn-warning" onClick="priceChew()">Add To Cart</button></p></div>'
-        }, 
-        {
-            name: "<div class='product'><center><h2 >Cat Tower</center></h2> <div class='containText'><p>",
-            price: 20,
-            image: '<img src = "./assets/tower.jpg">',
-            details: "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum ad tempora dolorem itaque libero quibusdam officia debitis eius? Voluptas, officia.</p> ",
-            button: '<p><button id="twenty" type="button" class="btn btn-warning" value="20" onClick="tower()">Add To Cart</button></p> </div>'
-        }, 
-        {
-            name: "<div class='product'><center><h2>Bed</h2> </center><p>",
-            price: 5,
-            image: '<img src = "./assets/bed.jpg" >',
-            details: "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum ad tempora dolorem itaque libero quibusdam officia debitis eius? Voluptas, officia.</p> ",
-            button: '<p><button id="five" type="button" class="btn btn-warning" value="5" onClick="bed()">Add To Cart</button></p></div>'
-        }
-        ];
-        
-        for (var i = 0; i < products.length; i++) {
-        console.log (products[i]) 
-        document.getElementById("containProducts").innerHTML =  products.map(products => 
-            `<div class="purchase"> <center>
-            <div> ${products.image}</div>
-            <div> ${products.name}</div>
-            <div> Price: $ ${products.price}</div>
-            <div>details: ${products.details}</div>
-           
-            <div class = "styleButton"> ${products.button}</div>
-            </center>
-          </div>`
-      ).join('')
-        } 
+var itemOne=parseInt(document.getElementById("one").value);
+var itemTwo=parseInt(document.getElementById("two").value);
+var itemThree=parseInt(document.getElementById("three").value);
 
-}; 
+var itemOneQuantity = 0;
+var itemTwoQuantity = 0;
+var itemThreeQuantity = 0;
 
-var towerClick=0;
-function tower() {
-       towerClick=towerClick+1;
-    console.log(towerClick + ' Cat Tower(s) in cart')
-var towerPrice = 20; 
-towerPrice = towerPrice * towerClick;
-console.log(towerPrice)
-document.getElementById("yourCart").innerHTML = towerClick + ' Cat Tower(s): $' + towerPrice;
-document.getElementById("cartItems").innerHTML = towerClick;
+var itemOnePrice = 0;
+var itemTwoPrice = 0;
+var itemThreePrice = 0;
+
+var dispTotal = 0;
+
+function buttonOne(){
+itemOneQuantity=itemOneQuantity+1;
+itemOnePrice = (itemOneQuantity * itemOne);
+logPrice = itemOnePrice;
+document.getElementById("productOneTotal").innerHTML = itemOneQuantity + ' Dog Toy(s) - Price: $' + itemOnePrice;
+};
+
+function buttonTwo(){
+itemTwoQuantity=itemTwoQuantity+1;
+itemTwoPrice = (itemTwoQuantity * itemTwo);
+document.getElementById("productTwoTotal").innerHTML = itemTwoQuantity + ' Cat Tower(s) - Price: $' + itemTwoPrice;
+};
+
+function buttonThree(){
+itemThreeQuantity=itemThreeQuantity+1;
+itemThreePrice = (itemThreeQuantity * itemThree);
+document.getElementById("productThreeTotal").innerHTML = itemThreeQuantity + ' Pet Bed(s) - Price: $' + itemThreePrice;
+};
+
+
+
+function displayItems() {
+itemsInCart=itemsInCart+1;  
+document.getElementById("cart").innerHTML = 'You have ' + itemsInCart + ' items in your cart <hr>'
+document.getElementById("numItems").innerHTML = itemsInCart; 
+  
 
 };
 
-var click=0;
-
-var chewClick=0;
-function priceChew() {
-       chewClick=chewClick+1;
-    console.log(chewClick + ' Chew Toys(s) in cart')
-var chewPrice = 10; 
-chewPrice = chewPrice * chewClick;
-document.getElementById("yourCart").innerHTML = chewClick + ' Chew Toy(s): $' + chewPrice;
-document.getElementById("cartItems").innerHTML = chewClick;
-
+function clearCart() {
+itemsInCart= itemsInCart-itemsInCart;
+document.getElementById("cart").innerHTML = 'You have no items in your cart <hr>';
+itemOneQuantity = itemOneQuantity-itemOneQuantity;
+itemTwoQuantity = itemTwoQuantity-itemTwoQuantity;
+itemThreeQuantity = itemThreeQuantity-itemThreeQuantity;
+itemOnePrice = itemOnePrice-itemOnePrice;
+itemTwoPrice = itemTwoPrice - itemTwoPrice;
+itemThreePrice = itemThreePrice -itemThreePrice;
+dispTotal = dispTotal-dispTotal;
+document.getElementById("productOneTotal").innerHTML = "";
+document.getElementById("productTwoTotal").innerHTML = "";
+document.getElementById("productThreeTotal").innerHTML = "";
+document.getElementById("numItems").innerHTML = itemsInCart; 
+document.getElementById("yourTotal").innerHTML = "Total: $" + dispTotal;
 
 };
 
-/*
-var click=0;
+var yourTotalDisplay = document.querySelectorAll('.shop');
+for (i = 0; i < yourTotalDisplay.length; ++i) {
 
-function priceChew() {
-
-click=click+1;
-console.log(click);    
-var dogToy = document.getElementById("ten").value;
-var dogCart= (parseInt(dogToy) * click);
-document.getElementById("yourCart").innerHTML = "<p><h2><center> Your cart: $ " + dogCart + "</p></h2></center><hr><p> Chew Toy </p>";
-document.getElementById("cartItems").innerHTML = click;
+function yTotal() {
+var dispTotal = itemOnePrice + itemTwoPrice + itemThreePrice;
+console.log(dispTotal) 
+document.getElementById("yourTotal").innerHTML = "Total: $" + dispTotal;
 };
-*/
-var click2=0;
-/*unction tower() {
 
-click2=click2+1;
-console.log(click3);    
-var catToy = document.getElementById("twenty").value;
-var catCart= (parseInt(catToy) * click2);
-document.getElementById("yourCart").innerHTML = "<p><h2><center> Your cart: $ " + catCart + "</p></h2></center>";
-}; */
-/*
-var click3=0;
-function bed() {
-    
-   click3=click3+1;
-   console.log(click3);    
-var catBed = document.getElementById("twenty").value;
-var bedCart= (parseInt(catBed) * click);
-document.getElementById("yourCart").innerHTML = "<p><h2><center> Your cart: $ " + bedCart + "</p></h2></center>";
+}
+
+function loadyBoy(){
+ products = [
+   {
+     name: "Chew Toy",
+     image: 'dogtoy.jpg',
+     price: 5,
+     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+     button: '<button onClick="displayItems(), buttonOne(), yTotal()" id="one" class="shop btn btn-warning" value="5"> Add To Cart </button>'
+   },
+   {
+     name: "Cat Tower",
+     image: 'tower.jpg',
+     price: 20,
+     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+     button: '<button onClick="displayItems(), buttonTwo(), yTotal()" id="two" class="shop btn btn-warning" value="20"> Add to Cart </button>'
+   },
+   {
+     name: "Pet Bed",
+     image: 'bed.jpg',
+     price: 10,
+     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+     button: '<button onClick="displayItems(), buttonThree(), yTotal()" id="three" class="shop btn btn-warning" value="20"> Add to Cart </button>'
+   }
+ ];
+
+for (var k = 0; k < products.length; k++){
+document.getElementById("putHere").innerHTML = products.map(products => `
+<div class = "styleIt">
+<p><img src= "./assets/${products.image}" height="200%" class="thePhoto"></p>
+<h2><p> ${products.name} </p></h2>
+<p>Price: $${products.price}</p>
+<p>${products.description}</p>
+<p>${products.button}</p>
+<br> <hr>
+</div>
+`);
+}
+  
 };
-*/
-
-
-/*var theShop = products[0].image + products[0].name + products[0].price + products[0].details + products[0].button + products[1].name + products[1].price + products[1].image + products[1].details + products[1].button + products[2].name + products[2].price + products[2].image + products[2].details + products[2].button
-document.getElementById("containProducts").innerHTML = theShop;*/

@@ -20,8 +20,8 @@
       };
       </script>
     </head>
-  <body onload="displayProducts()">
-                          
+  <body onload="clearCart(), loadyBoy(), yTotal()">
+   <div class="wholePage">                       
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#"><img src="./assets/logo-via-logohub.png" width="350px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,25 +43,41 @@
             </li>
           </ul>
         </div>
-        <button class ="btn btn-warning"><div id="cartItems"></div> Cart </button>
+        <button class ="btn btn-warning"><div id="numItems"></div> Cart </button>
       </nav>
 
-      <div id="wrapper">
-<div id="productCover">
-<img src="./assets/catnip.jpg">d
-    </div>
+      <div id="productCover">
+        <img src="./assets/catnip.jpg">
+            </div>
+            
+<div class="wholePage">
+            <div id="shopDescription"><center>
+              <h1>Shop Our Products</h1>
+              <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum laudantium ex dolorum fugiat obcaecati. Ipsum animi veritatis tenetur et, esse tempore non asperiores expedita possimus reprehenderit! Aperiam, natus voluptatem fugiat inventore eius quis excepturi officiis modi necessitatibus quo adipisci sit velit quos voluptates hic consequatur enim illum magnam nemo fugit!</p>
+          </center></div> <hr>
+            <div class ="cartStyle">
+              <div id="cart"></div>
+              <div id="productOneTotal"> </div>
+              <div id="productTwoTotal"> </div>
+              <div id="productThreeTotal"> </div>
+              <div id="yourTotal"> </div>
+                <br>
+                <button onClick="clearCart()" class="btn btn-primary"> Clear Cart</button>
+              </div>
+                
+            <div id="putHere">
+              
+            
+            </div>
 
-<div id="shopDescription"><center>
-    <h1>Shop Our Products</h1>
-    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum laudantium ex dolorum fugiat obcaecati. Ipsum animi veritatis tenetur et, esse tempore non asperiores expedita possimus reprehenderit! Aperiam, natus voluptatem fugiat inventore eius quis excepturi officiis modi necessitatibus quo adipisci sit velit quos voluptates hic consequatur enim illum magnam nemo fugit!</p>
-</center></div>
-<div id="yourCart"></div>
-<div id="containProducts">
-
-</div>
-</div>
-</div>
-</div>
+            <div class="hide">
+              <button onClick="displayItems()" id="one" class="shop btn btn-warning" value="10"> One </button>
+              <button onClick="displayItems()" id="two" class="shop btn btn-warning" value="20"> Two </button>
+              <button onClick="displayItems()" id="three" class="shop btn btn-warning" value="30"> Three </button>
+              </div>
+         
+          </div>
+          </div>
 <footer class="footer">
   <center>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione distinctio repellat fugit adipisci deleniti veniam laboriosam dicta iure vero illo!</center>
   <br>
@@ -85,3 +101,27 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<!--div id="wrapper">
+  <div id="productCover">
+  <img src="./assets/catnip.jpg">d
+      </div>
+  
+  <div id="shopDescription"><center>
+      <h1>Shop Our Products</h1>
+      <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum laudantium ex dolorum fugiat obcaecati. Ipsum animi veritatis tenetur et, esse tempore non asperiores expedita possimus reprehenderit! Aperiam, natus voluptatem fugiat inventore eius quis excepturi officiis modi necessitatibus quo adipisci sit velit quos voluptates hic consequatur enim illum magnam nemo fugit!</p>
+  </center></div>
+  
+  <div id="containProducts">
+  </div>
+  
+  <div class="cartStyle">
+  <div id="cart"></div>
+  <div id="productOneTotal"> </div>
+  <div id="productTwoTotal"> </div>
+  <div id="productThreeTotal"> </div>
+  <div id="yourTotal"> </div>
+  <button onClick="clearCart"> Clear Cart</button>
+  </div>
+  
+  </div-->
